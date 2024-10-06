@@ -3,7 +3,12 @@ img {
   width: 10rem;
 }
 
-.titans {
+.titan-cards {
   display: flex;
   justify-content: space-around;
+}
+
+.card {
+  background: greenyellow;
+  padding: 1rem 2rem 3rem 2rem;
 }

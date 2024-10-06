@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Card from './card';
 
 const Fetch = () => {
   const [titans, setTitans] = useState([]);
@@ -14,7 +15,7 @@ const Fetch = () => {
   }, []);
 
   return (
-    <div className="titans">
+    <div className="titan-cards">
       {titans.map((titan) => {
         if (titan.name === 'Colossal Titan' || titan.name === 'Jaw Titan')
           return;
@@ -33,12 +34,17 @@ const Fetch = () => {
           console.log('Substring not found.');
         }
         return (
-          <img
+          <Card
+            image={
+              <img
+                key={titan.id}
+                src={newString}
+                alt={titan.name}
+                width={350}
+                height={350}
+              />
+            }
             key={titan.id}
-            src={newString}
-            alt={titan.name}
-            width={350}
-            height={350}
           />
         );
       })}
