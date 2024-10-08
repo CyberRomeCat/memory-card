@@ -1,14 +1,8 @@
 // eslint-disable-next-line react/prop-types
-export default function Card({ image, titanId }) {
-  function onClick() {
-    alert('works');
-  }
-
+export default function Card({ image, titanID, onClick }) {
   return (
-    <>
-      <div className="card" key={titanId} onClick={onClick}>
-        {image}
-      </div>
-    </>
+    <div className="card" id={titanID} onClick={onClick}>
+      {image}
+    </div>
   );
 }

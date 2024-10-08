@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Card from './card';
+import shuffleArray from './shuffleCards';
 
 const Fetch = () => {
   const [titans, setTitans] = useState([]);
@@ -15,7 +16,7 @@ const Fetch = () => {
   }, []);
 
   return (
-    <div className="titan-cards">
+    <div className="titan-cards" key={titans.join('-')}>
       {titans.map((titan) => {
         if (titan.name === 'Colossal Titan' || titan.name === 'Jaw Titan')
           return;
@@ -45,6 +46,11 @@ const Fetch = () => {
               />
             }
             key={titan.id}
+            titanID={titan.id}
+            onClick={() => {
+              let shuffleCards = shuffleArray(titans);
+              setTitans(shuffleCards);
+            }}
           />
         );
       })}
