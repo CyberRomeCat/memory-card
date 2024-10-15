@@ -12,5 +12,6 @@ export default function score(Id) {
       currentScore++;
       titansId.push(currentId);
     }
+  console.log(currentScore);
   return currentScore;
 }

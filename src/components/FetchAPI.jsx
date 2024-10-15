@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import Card from './card';
-import shuffleArray from './shuffleCards';
-import Score from './score';
+import shuffleArray from '../logic/shuffleCards';
+import DisplayScore from './displayScore';
+import score from '../logic/score';
 
 const Fetch = () => {
   const [titans, setTitans] = useState([]);
@@ -60,7 +61,7 @@ const Fetch = () => {
         })}
       </div>
       <div>
-        <Score Id={currentTitan} />
+        <DisplayScore score={score(currentTitan)} />
       </div>
     </>
   );

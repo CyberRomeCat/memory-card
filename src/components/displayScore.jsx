@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
 export default function DisplayScore({ score }) {
-  return <div className="score">Score: {score}</div>;
+  let currentScore = score;
+  return <div className="score">Score: {currentScore}</div>;
 }
