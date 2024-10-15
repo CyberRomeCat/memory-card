@@ -5,10 +5,16 @@ img {
 
 .titan-cards {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .card {
-  background: greenyellow;
+  background: url(assets/rust.jpeg);
   padding: 1rem 2rem 3rem 2rem;
+  border-radius: 0.3vw;
+}
+
+.scores {
+  color: white;
 }

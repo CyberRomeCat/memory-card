@@ -20,6 +20,9 @@ const Fetch = () => {
 
   return (
     <>
+      <div className="scores">
+        <DisplayScore scores={score(currentTitan)} />
+      </div>
       <div className="titan-cards" key={titans.join('-')}>
         {titans.map((titan) => {
           if (titan.name === 'Colossal Titan' || titan.name === 'Jaw Titan')
@@ -59,9 +62,6 @@ const Fetch = () => {
             />
           );
         })}
-      </div>
-      <div>
-        <DisplayScore scores={score(currentTitan)} />
       </div>
     </>
   );
