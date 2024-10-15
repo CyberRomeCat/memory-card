@@ -20,8 +20,11 @@ const Fetch = () => {
 
   return (
     <>
-      <div className="scores">
-        <DisplayScore scores={score(currentTitan)} />
+      <div className="header">
+        <div className="title"></div>
+        <div className="scores">
+          <DisplayScore scores={score(currentTitan)} />
+        </div>
       </div>
       <div className="titan-cards" key={titans.join('-')}>
         {titans.map((titan) => {
@@ -49,7 +52,7 @@ const Fetch = () => {
                   src={newString}
                   alt={titan.name}
                   width={350}
-                  height={350}
+                  height={450}
                 />
               }
               key={titan.id}

@@ -6,15 +6,40 @@ img {
 .titan-cards {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 100rem;
+  justify-self: center;
 }
 
 .card {
   background: url(assets/rust.jpeg);
-  padding: 1rem 2rem 3rem 2rem;
+  padding: 1rem;
   border-radius: 0.3vw;
 }
 
+.score-container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1vw;
+}
+
 .scores {
-  color: white;
+  color: #850101;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.title {
+  background-image: url(./assets/logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 10rem;
+  width: 27rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
 }
