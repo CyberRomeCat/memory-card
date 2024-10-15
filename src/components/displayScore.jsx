@@ -1,4 +1,9 @@
-export default function DisplayScore({ score }) {
-  let currentScore = score;
-  return <div className="score">Score: {currentScore}</div>;
+export default function DisplayScore({ scores }) {
+  let allScores = scores;
+  return (
+    <>
+      <div className="score">Score: {allScores.currentScore}</div>
+      <div className="best-score">Best Score: {allScores.bestScore}</div>
+    </>
+  );
 }

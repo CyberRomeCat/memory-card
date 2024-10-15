@@ -61,7 +61,7 @@ const Fetch = () => {
         })}
       </div>
       <div>
-        <DisplayScore score={score(currentTitan)} />
+        <DisplayScore scores={score(currentTitan)} />
       </div>
     </>
   );
