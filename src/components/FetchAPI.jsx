@@ -4,7 +4,7 @@ import shuffleArray from '../logic/shuffleCards';
 import DisplayScore from './displayScore';
 import score from '../logic/score';
 
-const Fetch = () => {
+const FetchTitans = () => {
   const [titans, setTitans] = useState([]);
   const [currentTitan, setCurrentTitan] = useState();
   useEffect(() => {
@@ -70,4 +70,4 @@ const Fetch = () => {
   );
 };
 
-export default Fetch;
+export default FetchTitans;
