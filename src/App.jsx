@@ -1,4 +1,4 @@
-import FetchTitans from './components/FetchAPI';
+import { FetchTitans } from './components/FetchAPI';
 import './App.css';
 
 const App = () => {

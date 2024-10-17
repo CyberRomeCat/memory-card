@@ -43,3 +43,44 @@ img {
   display: flex;
   justify-content: space-between;
 }
+
+.popup {
+  position: fixed;
+  inset: 0px;
+  width: 45rem;
+  height: 30rem;
+  max-width: 100vw;
+  max-height: 100dvh;
+  margin: auto;
+  border-radius: 1vw;
+  background-color: rgba(255, 0, 0, 0.6);
+}
+
+.content {
+  color: white;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+#loser {
+  width: 100%;
+  height: 100%;
+}
+
+.status {
+  font-size: 4rem;
+  font-weight: bolder;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#playagain {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+}

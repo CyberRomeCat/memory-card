@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Card from './card';
 import shuffleArray from '../logic/shuffleCards';
 import DisplayScore from './displayScore';
+import DisplayStatus from './displayStatus';
 import score from '../logic/score';
 
 const FetchTitans = () => {
@@ -13,19 +14,21 @@ const FetchTitans = () => {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
         setTitans(data.results);
       });
   }, []);
+
+  const allScore = score(currentTitan);
 
   return (
     <>
       <div className="header">
         <div className="title"></div>
         <div className="scores">
-          <DisplayScore scores={score(currentTitan)} />
+          <DisplayScore scores={allScore} />
         </div>
       </div>
+      <DisplayStatus status={allScore.status} />
       <div className="titan-cards" key={titans.join('-')}>
         {titans.map((titan) => {
           if (titan.name === 'Colossal Titan' || titan.name === 'Jaw Titan')
@@ -70,4 +73,23 @@ const FetchTitans = () => {
   );
 };
 
-export default FetchTitans;
+const FetchGiphy = () => {
+  const [img, setImg] = useState('');
+  useEffect(() => {
+    fetch(
+      'https://api.giphy.com/v1/gifs/XyuSZLzAHyIVy?api_key=c9Bala7R0Bz3ZN4xTPpgNWNGhDWPV0jI&s',
+      { mode: 'cors' }
+    )
+      .then((res) => {
+        return res.json();
+      })
+      .then((response) => {
+        console.log(response);
+        setImg(response.data.images.original.url);
+      });
+  }, []);
+
+  return <img src={img} id="loser" />;
+};
+
+export { FetchTitans, FetchGiphy };
