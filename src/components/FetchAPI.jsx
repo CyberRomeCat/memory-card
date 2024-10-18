@@ -4,6 +4,7 @@ import shuffleArray from '../logic/shuffleCards';
 import DisplayScore from './displayScore';
 import DisplayStatus from './displayStatus';
 import score from '../logic/score';
+import RumblingAudio from './audio';
 
 const FetchTitans = () => {
   const [titans, setTitans] = useState([]);
@@ -54,8 +55,7 @@ const FetchTitans = () => {
                   key={titan.id}
                   src={newString}
                   alt={titan.name}
-                  width={350}
-                  height={450}
+                  className="titan-images"
                 />
               }
               key={titan.id}
@@ -68,6 +68,9 @@ const FetchTitans = () => {
             />
           );
         })}
+      </div>
+      <div className="multimedia">
+        <RumblingAudio />
       </div>
     </>
   );

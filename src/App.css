@@ -1,8 +1,3 @@
-img {
-  height: 10rem;
-  width: 10rem;
-}
-
 .titan-cards {
   display: flex;
   align-items: center;
@@ -83,4 +78,31 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 1rem;
+}
+
+.multimedia {
+  display: flex;
+  padding-left: 3rem;
+  padding-bottom: 3rem;
+}
+
+.audio {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background: #850101;
+  border-style: none;
+  border-radius: 10vw;
+  height: 10rem;
+  width: 10rem;
+  text-align: center;
+}
+
+.titan-images {
+  height: 10rem;
+  width: 10rem;
+}
+
+.controls {
+  text-align: center;
 }
