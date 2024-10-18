@@ -82,20 +82,38 @@
 
 .multimedia {
   display: flex;
-  padding-left: 3rem;
-  padding-bottom: 3rem;
+  align-self: flex-end;
+  gap: 1rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
 }
 
-.audio {
+.audio,
+.show-instructions {
   display: grid;
   justify-content: center;
   align-items: center;
   background: #850101;
   border-style: none;
   border-radius: 10vw;
-  height: 10rem;
-  width: 10rem;
+  height: 8rem;
+  width: 8rem;
   text-align: center;
+}
+
+.bubble-guide {
+  font-weight: bolder;
+  position: absolute;
+  top: 78%;
+  left: 12%;
+  transform: translate(-50%, -50%);
+}
+
+.text-instruc {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  transform: translate(-0%, -0%);
 }
 
 .titan-images {

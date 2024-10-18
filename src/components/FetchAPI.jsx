@@ -5,6 +5,7 @@ import DisplayScore from './displayScore';
 import DisplayStatus from './displayStatus';
 import score from '../logic/score';
 import RumblingAudio from './audio';
+import Instructions from './instructions';
 
 const FetchTitans = () => {
   const [titans, setTitans] = useState([]);
@@ -71,6 +72,7 @@ const FetchTitans = () => {
       </div>
       <div className="multimedia">
         <RumblingAudio />
+        <Instructions />
       </div>
     </>
   );
