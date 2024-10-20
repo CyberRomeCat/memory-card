@@ -10,6 +10,8 @@ import Instructions from './instructions';
 const FetchTitans = () => {
   const [titans, setTitans] = useState([]);
   const [currentTitan, setCurrentTitan] = useState();
+  const [flip, setFlip] = useState(false);
+
   useEffect(() => {
     fetch('https://api.attackontitanapi.com/titans')
       .then((res) => {
@@ -19,6 +21,13 @@ const FetchTitans = () => {
         setTitans(data.results);
       });
   }, []);
+
+  function flipCard() {
+    setFlip(!false);
+    setTimeout(() => {
+      setFlip(false);
+    }, 500);
+  }
 
   const allScore = score(currentTitan);
 
@@ -62,10 +71,14 @@ const FetchTitans = () => {
               key={titan.id}
               titanID={titan.id}
               onClick={() => {
-                let shuffleCards = shuffleArray(titans);
-                setTitans(shuffleCards);
+                flipCard();
+                setTimeout(() => {
+                  let shuffleCards = shuffleArray(titans);
+                  setTitans(shuffleCards);
+                }, 800);
                 setCurrentTitan(titan.id);
               }}
+              isFlipped={flip}
             />
           );
         })}

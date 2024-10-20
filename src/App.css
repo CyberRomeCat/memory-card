@@ -7,12 +7,6 @@
   justify-self: center;
 }
 
-.card {
-  background: url(assets/rust.jpeg);
-  padding: 1rem;
-  border-radius: 0.3vw;
-}
-
 .score-container {
   background-color: #fff;
   padding: 2rem;
@@ -116,11 +110,19 @@
   transform: translate(-0%, -0%);
 }
 
-.titan-images {
+.controls {
+  text-align: center;
+}
+
+.front,
+.back {
+  background: url(assets/rust.jpeg);
   height: 10rem;
   width: 10rem;
 }
 
-.controls {
-  text-align: center;
+.backcardimg,
+.titan-images {
+  height: 90%;
+  width: 90%;
 }

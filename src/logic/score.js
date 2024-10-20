@@ -4,7 +4,7 @@ let scores = { currentScore: 0, bestScore: 0, status: 'counting' };
 
 export default function score(Id) {
   let currentId = Id;
-  if (Id != undefined)
+  if (Id != undefined && Id != null)
     if (titansId.includes(currentId) || prevId == currentId) {
       scores.currentScore = 0;
       titansId = [];
