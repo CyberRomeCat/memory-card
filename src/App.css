@@ -43,6 +43,7 @@
   margin: auto;
   border-radius: 1vw;
   background-color: rgba(255, 0, 0, 0.6);
+  z-index: 5;
 }
 
 .content {
@@ -117,8 +118,11 @@
 .front,
 .back {
   background: url(assets/rust.jpeg);
-  height: 10rem;
-  width: 10rem;
+  height: 15rem;
+  width: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .backcardimg,
