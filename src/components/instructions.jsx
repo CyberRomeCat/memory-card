@@ -14,16 +14,16 @@ export default function Instructions() {
 
   return (
     <div className="instructions-container">
-      {show && (
-        <div className="bubble-guide">
-          <img className="instructions" src={bubble} />
-          <p className="text-instruc">
-            Get points by clicking on an image but dont click any more than
-            once!
-          </p>
-        </div>
-      )}
       <button className="show-instructions">
+        {show && (
+          <div className="bubble-guide">
+            <img className="instructions" src={bubble} />
+            <p className="text-instruc">
+              Get points by clicking on an image but dont click any more than
+              once!
+            </p>
+          </div>
+        )}
         <img src={question} onClick={() => showInstuctions()} />
       </button>
     </div>

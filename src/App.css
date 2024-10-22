@@ -2,9 +2,10 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 50px;
   max-width: 100rem;
   justify-self: center;
+  justify-content: space-evenly;
 }
 
 .score-container {
@@ -15,17 +16,16 @@
 
 .scores {
   color: #850101;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bolder;
 }
 
 .title {
   background-image: url(./assets/logo.png);
-  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   height: 10rem;
-  width: 27rem;
+  width: 20rem;
 }
 
 .header {
@@ -38,8 +38,6 @@
   inset: 0px;
   width: 45rem;
   height: 30rem;
-  max-width: 100vw;
-  max-height: 100dvh;
   margin: auto;
   border-radius: 1vw;
   background-color: rgba(255, 0, 0, 0.6);
@@ -59,6 +57,7 @@
 }
 
 .status {
+  text-align: center;
   font-size: 4rem;
   font-weight: bolder;
   position: absolute;
@@ -77,7 +76,9 @@
 
 .multimedia {
   display: flex;
+  position: relative;
   align-self: flex-end;
+  align-items: end;
   gap: 1rem;
   padding-left: 1rem;
   padding-bottom: 1rem;
@@ -91,24 +92,29 @@
   background: #850101;
   border-style: none;
   border-radius: 10vw;
-  height: 8rem;
-  width: 8rem;
+  height: 5rem;
+  width: 5rem;
   text-align: center;
 }
 
+.show-instructions {
+  position: relative;
+}
+
 .bubble-guide {
-  font-weight: bolder;
   position: absolute;
-  top: 78%;
-  left: 12%;
-  transform: translate(-50%, -50%);
+  bottom: -10%;
+  left: 50%;
+  transform: translate(-50%, -80%);
 }
 
 .text-instruc {
   position: absolute;
-  top: 15%;
-  left: 10%;
-  transform: translate(-0%, -0%);
+  font-weight: bolder;
+  font-size: 12px;
+  bottom: -10%;
+  left: 7%;
+  transform: translate(-3%, -90%);
 }
 
 .controls {
@@ -118,8 +124,8 @@
 .front,
 .back {
   background: url(assets/rust.jpeg);
-  height: 15rem;
-  width: 12rem;
+  height: 13rem;
+  width: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;

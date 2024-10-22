@@ -3,7 +3,6 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  overflow: hidden;
 }
 
 #root {
@@ -15,7 +14,7 @@ body {
 
 body {
   background-image: url(./assets/9683039-my-attempt-at-making-the-rumbling-r.jpg);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center;
   background-size: cover;
 }
