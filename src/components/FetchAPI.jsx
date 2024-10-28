@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import TitanCards from './TitanCards';
+import LocationCards from './LocationCards';
 
 const FetchTitans = () => {
   const [titans, setTitans] = useState([]);
@@ -21,6 +22,26 @@ const FetchTitans = () => {
   );
 };
 
+const FetchLocations = () => {
+  const [locations, setLocations] = useState([]);
+
+  useEffect(() => {
+    fetch('https://api.attackontitanapi.com/locations')
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setLocations(data.results);
+      });
+  }, []);
+
+  return (
+    <>
+      <LocationCards locations={locations} setLocations={setLocations} />
+    </>
+  );
+};
+
 const FetchGiphy = () => {
   const [img, setImg] = useState('');
   useEffect(() => {
@@ -32,7 +53,6 @@ const FetchGiphy = () => {
         return res.json();
       })
       .then((response) => {
-        console.log(response);
         setImg(response.data.images.original.url);
       });
   }, []);
@@ -40,4 +60,4 @@ const FetchGiphy = () => {
   return <img src={img} id="loser" />;
 };
 
-export { FetchTitans, FetchGiphy };
+export { FetchTitans, FetchGiphy, FetchLocations };

@@ -1,4 +1,4 @@
-import { FetchTitans } from './components/FetchAPI';
+import { FetchLocations, FetchTitans } from './components/FetchAPI';
 import Multimedia from './components/multimedia';
 import './App.css';
 import { StrictMode } from 'react';
@@ -6,7 +6,7 @@ import { StrictMode } from 'react';
 const App = () => {
   return (
     <StrictMode>
-      <FetchTitans />
+      <FetchLocations />
       <Multimedia />
     </StrictMode>
   );
