@@ -1,14 +1,14 @@
-import { FetchLocations, FetchTitans } from './components/FetchAPI';
 import Multimedia from './components/multimedia';
 import './App.css';
-import { StrictMode } from 'react';
-
+import DifficultyLevels from './components/DifficultyLevels';
+import Header from './components/displayHeader';
 const App = () => {
   return (
-    <StrictMode>
-      <FetchLocations />
+    <>
+      <Header />
+      <DifficultyLevels />
       <Multimedia />
-    </StrictMode>
+    </>
   );
 };
 

@@ -1,9 +1,17 @@
+import { Link } from 'react-router-dom';
 import DisplayScore from './displayScore';
 
 export default function Header({ allScore }) {
+  if (allScore == undefined) {
+    return (
+      <div className="header">
+        <Link className="title" to="/"></Link>
+      </div>
+    );
+  }
   return (
     <div className="header">
-      <div className="title"></div>
+      <Link className="title" to="/"></Link>
       <div className="scores">
         <DisplayScore scores={allScore} />
         <a

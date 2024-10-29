@@ -1,3 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap');
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-image: url(./assets/9683039-my-attempt-at-making-the-rumbling-r.jpg);
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.title-mainpage {
+  font-size: 3.5rem;
+  text-align: center;
+  font-family: 'Gravitas One', serif;
+  color: aliceblue;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 35%;
+  padding-top: 5rem;
+}
+
+a {
+  justify-content: space-around;
+  color: white;
+  font-size: 2rem;
+}
+
 .titan-cards {
   display: flex;
   align-items: center;

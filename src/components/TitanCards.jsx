@@ -4,6 +4,7 @@ import score from '../logic/score';
 import Header from './displayHeader';
 import DisplayStatus from './displayStatus';
 import { useState } from 'react';
+import Multimedia from './multimedia';
 
 export default function TitanCards({ titans, setTitans }) {
   const [flip, setFlip] = useState(false);
@@ -62,6 +63,7 @@ export default function TitanCards({ titans, setTitans }) {
           );
         })}
       </div>
+      <Multimedia />
     </>
   );
 }
