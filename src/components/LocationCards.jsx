@@ -13,7 +13,7 @@ export default function LocationCards({ locations, setLocations }) {
 
   useEffect(() => {
     if (currentLocation) {
-      setAllScore(score(currentLocation));
+      setAllScore(score(currentLocation, 'locations'));
     }
   }, [currentLocation]);
 
@@ -30,7 +30,7 @@ export default function LocationCards({ locations, setLocations }) {
       setTimeout(() => {
         if (currentLocation == locationId) {
           setCurrentLocation(null);
-          setAllScore(score(locationId));
+          setAllScore(score(locationId, 'locations'));
         } else {
           let shuffleCards = shuffleArray(locations);
           setLocations(shuffleCards);
@@ -42,7 +42,7 @@ export default function LocationCards({ locations, setLocations }) {
 
   return (
     <>
-      <Header allScore={allScore} />
+      <Header allScore={allScore} card={'locations'} />
       <DisplayStatus status={allScore.status} />
       <div className="titan-cards">
         {locations.map((location) => {

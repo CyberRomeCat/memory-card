@@ -1,30 +1,42 @@
-let titansId = [];
+let cardId = [];
 let prevId;
-let scores = { currentScore: 0, bestScore: 0, status: 'counting' };
+let scores = {
+  currentScore: 0,
+  bestScore: { titans: 0, locations: 0 },
+  status: 'counting',
+};
 
-export default function score(Id) {
+export default function score(Id, card) {
   let currentId = Id;
   if (Id != undefined && Id != null)
     if (
-      titansId.includes(currentId) ||
+      cardId.includes(currentId) ||
       prevId == currentId ||
       currentId == 'reset'
     ) {
       scores.currentScore = 0;
-      titansId = [];
+      cardId = [];
       currentId != 'reset'
         ? (scores.status = 'loser')
         : (scores.status = 'counting');
     } else {
-      if (scores.bestScore == scores.currentScore) scores.bestScore++;
+      if (scores.bestScore.titans == scores.currentScore && card == 'titans') {
+        scores.bestScore.titans++;
+      }
+      if (
+        scores.bestScore.locations == scores.currentScore &&
+        card == 'locations'
+      ) {
+        scores.bestScore.locations++;
+      }
       scores.currentScore++;
       if (scores.currentScore == 7) {
         scores.currentScore = 0;
-        titansId = [];
+        cardId = [];
         scores.status = 'winner';
       } else {
         scores.status = 'counting';
-        titansId.push(currentId);
+        cardId.push(currentId);
       }
     }
   return scores;

@@ -13,7 +13,7 @@ export default function TitanCards({ titans, setTitans }) {
 
   useEffect(() => {
     if (currentTitan) {
-      setAllScore(score(currentTitan));
+      setAllScore(score(currentTitan, 'titans'));
     }
   }, [currentTitan]);
 
@@ -30,7 +30,7 @@ export default function TitanCards({ titans, setTitans }) {
       setTimeout(() => {
         if (currentTitan === titanId) {
           setCurrentTitan(null);
-          setAllScore(score(titanId));
+          setAllScore(score(titanId, 'titans'));
         } else {
           const shuffledCards = shuffleArray(titans);
           setTitans(shuffledCards);
@@ -42,7 +42,7 @@ export default function TitanCards({ titans, setTitans }) {
 
   return (
     <>
-      <Header allScore={allScore} />
+      <Header allScore={allScore} card={'titans'} />
       <DisplayStatus status={allScore.status} />
       <div className="titan-cards">
         {titans.map((titan) => {
