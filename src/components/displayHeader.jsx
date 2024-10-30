@@ -5,8 +5,8 @@ import score from '../logic/score';
 export default function Header({ allScore, card }) {
   if (allScore == undefined) {
     return (
-      <div className="header" onClick={score('reset')}>
-        <Link className="title" to="/"></Link>
+      <div className="header">
+        <Link className="title" onClick={score('reset')} to="/"></Link>
       </div>
     );
   }
