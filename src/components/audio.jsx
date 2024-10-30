@@ -6,7 +6,6 @@ import sound from '../assets/rumblingAudio.mp3';
 export default function RumblingAudio() {
   const [control, setControl] = useState('pause');
   let rumblingAudio = useRef(new Audio(sound));
-  console.log(control);
 
   if (control == 'pause') {
     rumblingAudio.current.pause();

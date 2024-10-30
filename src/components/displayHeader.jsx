@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import DisplayScore from './displayScore';
+import score from '../logic/score';
 
 export default function Header({ allScore }) {
   if (allScore == undefined) {
     return (
-      <div className="header">
+      <div className="header" onClick={score('reset')}>
         <Link className="title" to="/"></Link>
       </div>
     );

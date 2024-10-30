@@ -3,19 +3,43 @@ import shuffleArray from '../logic/shuffleCards';
 import score from '../logic/score';
 import Header from './displayHeader';
 import DisplayStatus from './displayStatus';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Multimedia from './multimedia';
 
 export default function TitanCards({ titans, setTitans }) {
   const [flip, setFlip] = useState(false);
-  const [currentTitan, setCurrentTitan] = useState();
-  const allScore = score(currentTitan);
-  function flipCard() {
-    setFlip(!false);
+  const [currentTitan, setCurrentTitan] = useState(null);
+  const [allScore, setAllScore] = useState(score(null));
+
+  useEffect(() => {
+    if (currentTitan) {
+      setAllScore(score(currentTitan));
+    }
+  }, [currentTitan]);
+
+  const flipCard = () => {
+    setFlip(true);
     setTimeout(() => {
       setFlip(false);
     }, 700);
-  }
+  };
+
+  const handleCardClick = (titanId) => {
+    if (!flip) {
+      flipCard();
+      setTimeout(() => {
+        if (currentTitan === titanId) {
+          setCurrentTitan(null);
+          setAllScore(score(titanId));
+        } else {
+          const shuffledCards = shuffleArray(titans);
+          setTitans(shuffledCards);
+          setCurrentTitan(titanId);
+        }
+      }, 400);
+    }
+  };
+
   return (
     <>
       <Header allScore={allScore} />
@@ -23,21 +47,10 @@ export default function TitanCards({ titans, setTitans }) {
       <div className="titan-cards">
         {titans.map((titan) => {
           if (titan.name === 'Colossal Titan' || titan.name === 'Jaw Titan')
-            return;
-          let originalString = titan.img;
-          let substring = '/revision';
-          let newString;
+            return null;
 
-          // Find the index of the substring
-          let index = originalString.indexOf(substring);
+          const newString = titan.img.split('/revision')[0];
 
-          // Check if the substring exists
-          if (index !== -1) {
-            // Remove the substring and everything after it
-            newString = originalString.slice(0, index);
-          } else {
-            console.log('Substring not found.');
-          }
           return (
             <Card
               image={
@@ -50,14 +63,7 @@ export default function TitanCards({ titans, setTitans }) {
               }
               key={titan.id}
               titanID={titan.id}
-              onClick={() => {
-                flipCard();
-                setTimeout(() => {
-                  let shuffleCards = shuffleArray(titans);
-                  setTitans(shuffleCards);
-                  setCurrentTitan(titan.id);
-                }, 400);
-              }}
+              onClick={() => handleCardClick(titan.id)}
               isFlipped={flip}
             />
           );
