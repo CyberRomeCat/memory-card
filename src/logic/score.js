@@ -30,7 +30,10 @@ export default function score(Id, card) {
         scores.bestScore.locations++;
       }
       scores.currentScore++;
-      if (scores.currentScore == 7) {
+      if (
+        (card == 'titans' && scores.currentScore == 7) ||
+        (card == 'locations' && scores.currentScore == 9)
+      ) {
         scores.currentScore = 0;
         cardId = [];
         scores.status = 'winner';
