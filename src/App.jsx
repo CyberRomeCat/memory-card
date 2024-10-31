@@ -1,12 +1,11 @@
 import Multimedia from './components/multimedia';
 import './App.css';
-import DifficultyLevels from './components/DifficultyLevels';
-import Header from './components/displayHeader';
+import { Outlet } from 'react-router-dom';
+
 const App = () => {
   return (
     <>
-      <Header />
-      <DifficultyLevels />
+      <Outlet />
       <Multimedia />
     </>
   );

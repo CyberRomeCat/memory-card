@@ -4,7 +4,6 @@ import score from '../logic/score';
 import Header from './displayHeader';
 import DisplayStatus from './displayStatus';
 import { useState, useEffect } from 'react';
-import Multimedia from './multimedia';
 
 export default function LocationCards({ locations, setLocations }) {
   const [flip, setFlip] = useState(false);
@@ -70,7 +69,6 @@ export default function LocationCards({ locations, setLocations }) {
           );
         })}
       </div>
-      <Multimedia />
     </>
   );
 }
