@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import DisplayScore from './displayScore';
 import score from '../logic/score';
+import svg from '../assets/github.svg';
 
 export default function Header({ allScore, card }) {
   if (allScore == undefined) {
@@ -16,10 +17,11 @@ export default function Header({ allScore, card }) {
       <div className="scores">
         <DisplayScore scores={allScore} card={card} />
         <a
-          href="https://www.reddit.com/r/titanfolk/comments/t1ywni/my_attempt_at_making_the_rumbling/"
-          className="bg-original-photo"
+          href="https://github.com/CyberRomeCat/memory-card"
+          target="_blank"
+          className="github-svg"
         >
-          KlutchLord
+          <img src={svg} />
         </a>
       </div>
     </div>

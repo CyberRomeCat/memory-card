@@ -44,7 +44,8 @@ body {
 }
 
 a {
-  justify-content: space-around;
+  display: flex;
+  justify-content: end;
   color: white;
   font-size: 2rem;
 }
